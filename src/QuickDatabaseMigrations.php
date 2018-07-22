@@ -27,7 +27,10 @@ trait QuickDatabaseMigrations
         }
 
         // otherwise we just run single migration that loads database dump
-        $this->artisan('migrate:fresh', ['--path' => realpath(__DIR__ . '/../migrations')]);
+        $this->artisan('migrate:fresh', [
+            '--path' => realpath(__DIR__ . '/../migrations'),
+            '--realpath' => 1,
+        ]);
 
         $this->app[Kernel::class]->setArtisan(null);
 
