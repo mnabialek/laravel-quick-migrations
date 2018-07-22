@@ -1,0 +1,45 @@
+{
+    "name": "mnabialek/laravel-quick-migrations",
+    "description": "Run Laravel tests quicker",
+    "keywords": [
+        "laravel",
+        "laravel migrations",
+        "laravel dusk speed",
+        "laravel dusk performance",
+        "laravel migrations performance"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcin Nabiałek",
+            "email": "dev@nabialek.org"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^5.6"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.11",
+        "phpunit/phpunit": "^7.0",
+        "mockery/mockery": "^1.0",
+        "php-coveralls/php-coveralls": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mnabialek\\LaravelQuickMigrations\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mnabialek\\LaravelQuickMigrations\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mnabialek\\LaravelQuickMigrations\\Providers\\ServiceProvider"
+            ]
+        }
+    }
+}
