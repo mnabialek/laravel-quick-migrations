@@ -12,7 +12,7 @@ class InitializeDb extends Migration
      */
     public function up()
     {
-        DB::unprepared(file_get_contents(storage_path(config('quick_migrations.dump_file'))));
+        DB::unprepared(file_get_contents(config('quick_migrations.dump_file')));
     }
 
     /**
