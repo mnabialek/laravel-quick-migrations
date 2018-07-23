@@ -31,7 +31,7 @@ Be aware this package doesn't improve speed of normal migrations you apply to da
     
     ```php
     QUICK_MIGRATIONS_ENABLED=true
-    QUICK_MIGRATIONS_DUMP_FILE=/custom/directory/custom_filename.sql
+    QUICK_MIGRATIONS_DUMP_FILE="/custom/directory/custom_filename.sql"
     ```
     
     and customize it with your own values. Keep if mind if you set `QUICK_MIGRATIONS_ENABLED` you will automatically use default
