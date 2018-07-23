@@ -10,6 +10,21 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         // merge config
-        $this->mergeConfigFrom(realpath(__DIR__ . '/../../publish/config/quick_migrations.php'), 'quick_migrations');
+        $this->mergeConfigFrom($this->configFileLocation(), 'quick_migrations');
+
+        // register files to be published
+        $this->publishes([
+            $this->configFileLocation() => config_path('quick_migrations.php'),
+        ]);
+    }
+
+    /**
+     * Get config file location.
+     *
+     * @return bool|string
+     */
+    protected function configFileLocation()
+    {
+        return realpath(__DIR__ . '/../../publish/config/quick_migrations.php');
     }
 }
