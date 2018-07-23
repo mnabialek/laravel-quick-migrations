@@ -1,6 +1,7 @@
 <?php
+
 return [
-    /**
+    /*
      * Whether quick migrations are enabled. If set to disabled you can still use QuickDatabaseMigrations trait
      * and it will behave same as Laravel's DatabaseMigrations.
      */
