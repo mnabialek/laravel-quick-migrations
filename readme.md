@@ -71,7 +71,8 @@ Of course in your case it results might be different. A lot of depends on migrat
 
 ## Cons
 
-You need to manually update dump whenever you add/change migrations. But assuming you are using tests it might be really worth it to spend < 1 minute for dumping fresh migrations to save hundreds of minutes.
+- You need to manually update dump whenever you add/change migrations. But assuming you are using tests it might be really worth it to spend < 1 minute for dumping fresh migrations to save hundreds of minutes.
+- After running tests in your database you have data you created during your tests. From my point of view, if you are using database for tests only you should not care much about it. But of course you can create command that will always remove everything from your database after completing tests if you really need it.
 
 ### Authors
 
