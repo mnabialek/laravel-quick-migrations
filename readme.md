@@ -65,9 +65,9 @@ My test suite (real application) had 53 Laravel Dusk tests with 890 assertions r
 | 2nd  | 25.08 min (28.4s/test)  |9.23 min (10.45s/test)|15.85 min (**2.72 times faster**)|
 | 3rd  | 24.37 min (27.57s/test)  |7.92 min (8.97s/test)|16.45 min (**3.08 times faster**)|
 
-As you see in real-application scenario difference is quite impressive. Using modified trait makes tests running almost 3 times faster as original tests. 
+As you see in real-application scenario difference is quite impressive. Using modified trait makes tests running almost 3 times faster comparing to original tests. 
 
-Of course in your case it results might be different. A lot of depends on migrations you have in your app - how long they take by default. For example assuming you have 100 tests using migrations and applying your migrations takes 10 seconds (for each test) and using your dump would take 6 seconds (for each test) then you would save 100 * 4 seconds that gives 6.66 minutes each time you are running your tests. As you see in my scenario difference was much bigger
+Of course in your case results might be different. A lot of depends on migrations you have in your app - how long they take by default. For example assuming you have 100 tests using migrations and applying your migrations takes 10 seconds (for each test) and using your dump would take 6 seconds (for each test) then you would save 100 * 4 seconds that gives 6.66 minutes each time you are running your tests. As you see in my scenario difference was much bigger.
 
 ## Cons
 
