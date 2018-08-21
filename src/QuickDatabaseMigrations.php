@@ -21,7 +21,7 @@ trait QuickDatabaseMigrations
     {
         // if disabled we just run parent method and that's it
         if (! config('quick_migrations.enabled')) {
-            $this->runDefaultDatabaseMigrations();
+            $this->useDefaultWay();
 
             return;
         }
@@ -38,5 +38,14 @@ trait QuickDatabaseMigrations
         $this->beforeApplicationDestroyed(function () {
             RefreshDatabaseState::$migrated = false;
         });
+    }
+
+    /**
+     * Use default handling way (same as DatabaseMigrations).
+     * @codeCoverageIgnore
+     */
+    protected function useDefaultWay()
+    {
+        $this->runDefaultDatabaseMigrations();
     }
 }
