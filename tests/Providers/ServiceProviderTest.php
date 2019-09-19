@@ -22,8 +22,8 @@ class ServiceProviderTest extends UnitTestCase
 
         $baseDir = '/some/sample/directory';
 
-        $app->shouldReceive('make')->atLeast()->once()
-            ->with('path.config')->andReturn($baseDir);
+        $app->shouldReceive('configPath')->atLeast()->once()
+            ->with('quick_migrations.php')->andReturn($baseDir.'/quick_migrations.php');
 
         $configFile = realpath(__DIR__ . '/../../publish/config/quick_migrations.php');
         $provider->shouldReceive('mergeConfigFrom')->once()->with(
