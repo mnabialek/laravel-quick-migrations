@@ -5,7 +5,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mnabialek/laravel-quick-migrations/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mnabialek/laravel-quick-migrations/)
 [![Packagist](https://img.shields.io/packagist/dt/mnabialek/laravel-quick-migrations.svg)](https://packagist.org/packages/mnabialek/laravel-quick-migrations)
 
-This package is intended to **improve speed of Laravel tests that needs to use migrations**. In case you use Laravel's `DatabaseMigrations` trait (especially in Browser tests) you might be interested in using this package to save a lof of time.
+This package is intended to **improve speed of Laravel tests that needs to use migrations**. In case you use Laravel's `DatabaseMigrations` trait (especially in Browser tests) you might be interested in using this package to save a lot of time.
 
 Be aware this package doesn't improve speed of normal migrations you apply to database - it should be used only if have tests in your application and you want to improve their speed. 
 
