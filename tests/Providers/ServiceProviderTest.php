@@ -7,10 +7,11 @@ use Illuminate\Container\Container;
 use Mnabialek\LaravelQuickMigrations\Providers\ServiceProvider;
 use Mnabialek\LaravelQuickMigrations\Tests\UnitTestCase;
 use Mockery;
+use PHPUnit\Framework\Attributes\Test;
 
 class ServiceProviderTest extends UnitTestCase
 {
-    /** @test */
+    #[Test]
     public function it_merges_config_and_publishes_file()
     {
         $app = Mockery::mock(Container::class, ArrayAccess::class);
@@ -23,7 +24,7 @@ class ServiceProviderTest extends UnitTestCase
         $baseDir = '/some/sample/directory';
 
         $app->shouldReceive('configPath')->atLeast()->once()
-            ->with('quick_migrations.php')->andReturn($baseDir.'/quick_migrations.php');
+            ->with('quick_migrations.php')->andReturn($baseDir . '/quick_migrations.php');
 
         $configFile = realpath(__DIR__ . '/../../publish/config/quick_migrations.php');
         $provider->shouldReceive('mergeConfigFrom')->once()->with(

@@ -9,11 +9,12 @@ use Illuminate\Foundation\Testing\RefreshDatabaseState;
 use Illuminate\Foundation\Testing\TestCase;
 use Mnabialek\LaravelQuickMigrations\QuickDatabaseMigrations;
 use Mockery;
+use PHPUnit\Framework\Attributes\Test;
 use stdClass;
 
 class QuickDatabaseMigrationsTest extends UnitTestCase
 {
-    /** @test */
+    #[Test]
     public function it_runs_default_method_when_turned_off()
     {
         $app = Mockery::mock(Container::class, ArrayAccess::class);
@@ -36,7 +37,7 @@ class QuickDatabaseMigrationsTest extends UnitTestCase
         $this->assertTrue(true);
     }
 
-    /** @test */
+    #[Test]
     public function it_runs_custom_code_when_turned_on()
     {
         $app = Mockery::mock(Container::class, ArrayAccess::class);
@@ -67,7 +68,7 @@ class QuickDatabaseMigrationsTest extends UnitTestCase
 
         // set some state
         RefreshDatabaseState::$migrated = true;
-        $this->assertSame(true, RefreshDatabaseState::$migrated);
+        $this->assertTrue(RefreshDatabaseState::$migrated);
 
         $class->shouldReceive('beforeApplicationDestroyed')->once()->passthru();
 
@@ -80,7 +81,7 @@ class QuickDatabaseMigrationsTest extends UnitTestCase
         $callbacks[0]();
 
         // make sure state was changed
-        $this->assertSame(false, RefreshDatabaseState::$migrated);
+        $this->assertFalse(RefreshDatabaseState::$migrated);
     }
 }
 

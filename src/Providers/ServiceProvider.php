@@ -5,7 +5,7 @@ namespace Mnabialek\LaravelQuickMigrations\Providers;
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function register()
     {
